@@ -5,7 +5,7 @@
     <script src="<?php echo base_url();?>tatarias/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo base_url();?>tatarias/vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- <script src="tatarias/vendor/metisMenu/metisMenu.min.js"></script> -->
 
     <!-- DataTables JavaScript -->
    <!--  <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>

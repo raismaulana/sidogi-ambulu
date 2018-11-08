@@ -21,7 +21,7 @@
     <link href="<?php echo base_url();?>tatarias/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <!-- <link href="<?php// echo base_url();?>tatarias/vendor/morrisjs/morris.css" rel="stylesheet"> -->
+    <!-- <link href="tatarias/vendor/morrisjs/morris.css" rel="stylesheet"> -->
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url();?>tatarias/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -85,6 +85,14 @@
 
                         <li>
                             <a href="<?php base_url();?>PendaftaranPasien"><i class="fa fa-dashboard fa-fw"></i> Daftar Pasien Baru</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php base_url();?>DataPasien"><i class="fa fa-dashboard fa-fw"></i> Data Pasien</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php base_url();?>Obat"><i class="fa fa-dashboard fa-fw"></i> Obat</a>
                         </li>
                         
                     </ul>
