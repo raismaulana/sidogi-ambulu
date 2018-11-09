@@ -17,7 +17,14 @@ class Obat extends CI_Controller{
 
 	public function daftarObat()
 	{
-		// 
+		// $data = array(
+		// 	'nama_obat' => $this->input->post('nama'),
+		// 	'harga_obat' => $this->input->post('harga'),
+		// 	'stok_obat' => $this->input->post('stok')
+		// 	);
+		// print_r($data);
+		// $this->Rais_model->input_data_pasien($data);
+		// redirect('PendaftaranPasien','refresh');
 	}
 
 	
