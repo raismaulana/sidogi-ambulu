@@ -20,9 +20,6 @@
     <!-- Custom CSS -->
     <link href="<?php echo base_url();?>tatarias/dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <!-- <link href="tatarias/vendor/morrisjs/morris.css" rel="stylesheet"> -->
-
     <!-- Custom Fonts -->
     <link href="<?php echo base_url();?>tatarias/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 

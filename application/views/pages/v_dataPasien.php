@@ -55,11 +55,70 @@
 
     </div>
     <!-- /#wrapper -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-pasien').DataTable({
-            responsive: true
+    
+    <!-- jQuery -->
+    <script src="<?php echo base_url();?>tatarias/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url();?>tatarias/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?php echo base_url();?>tatarias/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="<?php echo base_url()?>tatarias/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url()?>tatarias/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>tatarias/vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo base_url();?>tatarias/dist/js/sb-admin-2.js"></script>
+
+
+    <script type="text/javascript">
+        var save_method;
+        var table;
+
+        $(document).ready(function(){
+            var table = $('#mytable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "order": [],
+
+                "ajax": {
+                "url": '<?php echo site_url('Obat/get_json');?>',
+                "type": "POST"
+            },
+
+            "columns": [
+                {"data": "id_obat"},
+                {"data": "nama_obat"},
+                {"data": "harga_obat", render: $.fn.dataTable.render.number('.', ',', '')},
+                {"data": "stok_obat"},
+                {"data": "action"}
+            ],
+            });
         });
-    });
+
+        $('#mytable').on('click','.edit_record',function(){
+            var id_obat = $(this).data('id');
+            var nama_obat = $(this).data('nama');
+            var harga_obat = $(this).data('harga');
+            var stok_obat = $(this).data('stok');
+            $('#ModalUpdate').modal('show');
+            $('[name="id"]').val(id_obat);
+            $('[name="nama"]').val(nama_obat);
+            $('[name="harga"]').val(harga_obat);
+            $('[name="stok"]').val(stok_obat);
+        })
+
+        $('#mytable').on('click','.hapus_record', function(){
+            var id_obat = $(this).data('id');
+            $('#ModalHapus').modal('show');
+            $('[name="id"]').val(id_obat);
+        })
     </script>
+
+</body>
+
+</html>
                         
