@@ -25,7 +25,13 @@ class Deka_model extends CI_Model {
 		}
 	}
 
-	
+	public function antrian(){
+		$sql = "SELECT rekam_medis.id_rekam_medis, pasien.nama_pasien, pasien.gender_pasien FROM pasien JOIN rekam_medis on rekam_medis.pasien_id_pasien = pasien.id_pasien WHERE rekam_medis.status = '0' AND rekam_medis.tanggal_periksa IN
+			(
+				SELECT MAX(rekam_medis.tanggal_periksa)
+			)";
+		return $this->db->query($sql);
+	}
 
 }
 

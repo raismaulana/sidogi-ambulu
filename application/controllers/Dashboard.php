@@ -7,10 +7,13 @@ class Dashboard extends Ci_Controller{
 		parent::__construct();
 		$this->load->database();
 		$this->load->helper('url');
+		$this->load->model('Rais_model');
+		$this->load->model('Deka_model');
 	}
 	public function index(){
+		$x['data'] = $this->Deka_model->antrian();
 		$this->load->view('templates/header');
-		$this->load->view('pages/index');
+		$this->load->view('pages/v_antrian', $x);
 		$this->load->view('templates/footer');
 	}
 	public function pendaftaranPasien(){
