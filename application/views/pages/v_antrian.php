@@ -1,3 +1,4 @@
+
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -25,26 +26,35 @@
                                 <tbody>
                                     <?php 
                                     $no = 1;
-                                    foreach($data->result_array() as $i):
-                                        $nama_pasien=$i['nama_pasien'];
-                                        $gender_pasien=$i['gender_pasien'];
+                                    foreach($data->result_object() as $i){
+                                       
                                         
                                     ?>
                                     <tr>
                                         <td><?php echo $no++;?></td>
-                                        <td><?php echo $nama_pasien;?></td>
-                                        <td><?php echo $gender_pasien;?></td>
+                                        <td><?php echo $i->nama_pasien;?></td>
+                                        <td><?php echo $i->gender_pasien;?></td>
                                         <td>
-                                            <a  class="btn btn-danger" href="<?php echo base_url();?>antrian/hapus/$i[id_produk]"><i class="fa fa-trash-o"></i> Hapus</a>
-                                            <button class="btn btn-success" href="<?php echo base_url();?>antrian/bayar"><i class="fa  fa-money"></i> Bayar</button>
+                                            <?php echo anchor('antrian/hapus/'.$i->id_rekam_medis, ' Hapus', array('class'=>'fa fa-trash-o btn btn-danger'));
+                                            ?>
+                                            <?php echo anchor('antrian/bayar/'.$i->id_rekam_medis, ' Bayar', array('class'=>'fa fa-money btn btn-success'));
+                                            ?>
+
+
+                                           
                                         </td>
                                        
                                     </tr>
-                                    <?php endforeach;?>   
+                                    <?php } ?>   
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
                         </div>
+
+                        
+                                
+                        <div ><?php echo $this->session->flashdata('info'); ?></div>
+                        
                         <div class="panel-footer" style="">
                             
                         </div>
@@ -63,4 +73,10 @@
             responsive: true
         });
     });
+
+     
+    
+
     </script>
+
+
