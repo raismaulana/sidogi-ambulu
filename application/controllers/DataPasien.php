@@ -6,6 +6,7 @@ class DataPasien extends CI_Controller{
 	{
 		parent::__construct();
 		$this->load->database();
+		$this->load->library('datatables');
 		$this->load->helper('url', 'form');
 		$this->load->model('Rais_model');
 	}
@@ -13,7 +14,6 @@ class DataPasien extends CI_Controller{
 		$x['data'] = $this->Rais_model->ambil_data_pasien();
 		$this->load->view('templates/header');
 		$this->load->view('pages/v_dataPasien', $x);
-		$this->load->view('templates/footer');
 	}
 
 }
