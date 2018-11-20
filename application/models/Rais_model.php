@@ -50,4 +50,16 @@ class Rais_model extends CI_Model{
 		return $this->db->insert('tindakan', $data);
 	}
 
+	public function get_pasien_by_id($id)
+	{
+		$this->db->where('id_pasien', $id);
+		return $this->db->get('pasien')->row();
+	}
+
+	public function input_data_keluhan($keluhan, $iduser, $idpasien)
+	{
+		$sql = "INSERT INTO `rekam_medis`(`keluhan_periksa`, `tanggal_periksa`, `user_id_user`, `pasien_id_pasien`) VALUES ('$keluhan', NOW() ,'$iduser', '$idpasien')";
+		return $this->db->query($sql);
+	}
+
 }
