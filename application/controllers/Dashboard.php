@@ -6,6 +6,7 @@ class Dashboard extends Ci_Controller{
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->library('form_validation');
 		$this->load->model('Rais_model');
 		$this->load->model('Deka_model');
 	}
